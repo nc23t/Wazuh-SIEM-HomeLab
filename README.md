@@ -1,10 +1,10 @@
 # Wazuh SIEM Home Lab
-A
+
 A fully functional SIEM (Security Information and Event Management) home lab built on Hyper-V, monitoring real endpoints across Windows and Linux using Wazuh 4.14.4.
 
 ## Overview
 
-This project deploys Wazuh — an open-source XDR and SIEM platform — on a Hyper-V virtual machine running Ubuntu Server 22.04. The server collects and analyzes security telemetry from multiple endpoints on my home network, including a Windows 11 workstation and a Raspberry Pi 4 running Pi-hole, WireGuard VPN, and other network services.
+This project deploys Wazuh; an open-source XDR and SIEM platform, on a Hyper-V virtual machine running Ubuntu Server 22.04. The server collects and analyzes security telemetry from multiple endpoints on my home network, including a Windows 11 workstation and a Raspberry Pi 4 running Pi-hole, WireGuard VPN, and other network services (with plans to add my MacBook).
 
 The lab demonstrates real-world SIEM capabilities: centralized log collection, vulnerability detection, MITRE ATT&CK mapping, CIS benchmark compliance scanning, and file integrity monitoring.
 
@@ -182,9 +182,3 @@ The Pi agent revealed MITRE ATT&CK activity across multiple tactic categories (D
 - **Hyper-V** — Type 1 hypervisor (Windows 11 Pro)
 - **Raspberry Pi OS (Debian 13)** — Linux endpoint
 - **Windows 11 Pro** — Windows endpoint
-
-## Author
-
-**Nathaniel Craiu**
-- GitHub: [NC23t](https://github.com/NC23t)
-- LinkedIn: [ncraiu](https://linkedin.com/in/ncraiu)
