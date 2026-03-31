@@ -12,36 +12,36 @@ The lab demonstrates real-world SIEM capabilities: centralized log collection, v
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
-│                     Home Network (<NETWORK-SUBNET>)            │
+│                     Home Network (<NETWORK-SUBNET>)          │
 │                                                              │
 │  ┌─────────────────────┐     ┌─────────────────────────────┐ │
 │  │  Windows 11 PC      │     │  Raspberry Pi 4             │ │
-│  │  <WINDOWS-PC-IP>    │     │  <RASPBERRY-PI-IP>               │ │
+│  │  <WINDOWS-PC-IP>    │     │  <RASPBERRY-PI-IP>          | │
 │  │  Wazuh Agent 4.14.4 │     │  Wazuh Agent 4.14.4         │ │
-│  │                     │     │  Pi-hole + WireGuard VPN     │ │
-│  │  Monitored:         │     │  + Unbound + Nextcloud       │ │
-│  │  - Windows Events   │     │  + Fail2Ban                  │ │
-│  │  - Vulnerability    │     │                              │ │
-│  │    Detection        │     │  Monitored:                  │ │
-│  │  - CIS Benchmarks   │     │  - Auth logs                 │ │
-│  │  - File Integrity   │     │  - Syslog                    │ │
-│  └────────┬────────────┘     │  - CIS Benchmarks            │ │
-│           │                  │  - File Integrity             │ │
-│           │                  └──────────┬────────────────────┘ │
-│           │                             │                      │
-│           └──────────┬──────────────────┘                      │
-│                      │                                         │
-│           ┌──────────▼──────────┐                              │
-│           │  Wazuh Server (VM)  │                              │
-│           │  <WAZUH-SERVER-IP>      │                              │
-│           │  Ubuntu Server 22.04│                              │
-│           │  Hyper-V Gen 2 VM   │                              │
-│           │                     │                              │
-│           │  - Wazuh Manager    │                              │
-│           │  - Wazuh Indexer    │                              │
-│           │  - Wazuh Dashboard  │                              │
-│           │  - Filebeat         │                              │
-│           └─────────────────────┘                              │
+│  │                     │     │  Pi-hole + WireGuard VPN    │ │
+│  │  Monitored:         │     │  + Unbound + Nextcloud      │ │
+│  │  - Windows Events   │     │  + Fail2Ban                 │ │
+│  │  - Vulnerability    │     │                             │ │
+│  │    Detection        │     │  Monitored:                 │ │
+│  │  - CIS Benchmarks   │     │  - Auth logs                │ │
+│  │  - File Integrity   │     │  - Syslog                   │ │
+│  └────────┬────────────┘     │  - CIS Benchmarks           │ │
+│           │                  │  - File Integrity           │ │
+│           │                  └──────────┬────────────────────┘ 
+│           │                             │                    │
+│           └──────────┬────────────────┘                      │
+│                      │                                       │
+│           ┌──────────▼──────────┐                            │
+│           │  Wazuh Server (VM)  │                            │
+│           │  <WAZUH-SERVER-IP>  │                            │
+│           │  Ubuntu Server 22.04│                            │
+│           │  Hyper-V Gen 2 VM   │                            │
+│           │                     │                            │
+│           │  - Wazuh Manager    │                            │
+│           │  - Wazuh Indexer    │                            │
+│           │  - Wazuh Dashboard  │                            │
+│           │  - Filebeat         │                            │
+│           └─────────────────────┘                            │
 └──────────────────────────────────────────────────────────────┘
 ```
 
