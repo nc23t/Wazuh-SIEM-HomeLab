@@ -29,7 +29,7 @@ The lab demonstrates real-world SIEM capabilities: centralized log collection, v
 │           │                  │  - File Integrity           │ │
 │           │                  └──────────┬────────────────────┘ 
 │           │                             │                    │
-│           └──────────┬────────────────┘                      │
+│           └──────────┬──────────────────┘                    │
 │                      │                                       │
 │           ┌──────────▼──────────┐                            │
 │           │  Wazuh Server (VM)  │                            │
