@@ -64,19 +64,19 @@ The lab demonstrates real-world SIEM capabilities: centralized log collection, v
 
 Created a Gen 2 VM in Hyper-V Manager with 8 GB RAM, 4+ vCPUs, and an 80 GB virtual hard disk on the D: drive. Attached the Ubuntu Server 22.04 ISO and configured the external virtual switch (vExternal) bound to the physical Ethernet adapter for full network access.
 
-![VM Creation](screenshots/01-vm-creation.png)
+![VM Creation](screenshots/VMsetup.png)
 
-![VM Hardware Settings](screenshots/02-vm-hardware-settings.png)
+![VM Hardware Settings](screenshots/config-for-vm.png)
 
 ### 2. Install Ubuntu Server
 
 Installed Ubuntu Server 22.04 with default settings, OpenSSH enabled, and LVM storage on the 80 GB virtual disk.
 
-![Ubuntu Install Type](screenshots/05-ubuntu-install-type.png)
+![Ubuntu Install Type](screenshots/setup.png)
 
-![Storage Configuration](screenshots/03-storage-config.png)
+![Storage Configuration](screenshots/storage-config.png)
 
-![Profile Configuration](screenshots/04-profile-config.png)
+![Profile Configuration](screenshots/profile-config.png)
 
 ### 3. Install Wazuh (All-in-One)
 
@@ -89,13 +89,13 @@ sudo bash ./wazuh-install.sh -a
 
 The installer generates SSL certificates, configures all components, and outputs the admin credentials for the web dashboard.
 
-![Wazuh Installing](screenshots/06-wazuh-installing.png)
+![Wazuh Installing](screenshots/installingWazuh.png)
 
 ### 4. Access the Dashboard
 
 After installation, the Wazuh dashboard is accessible at `https://<VM-IP>:443`. First login uses the auto-generated admin credentials from the installer output.
 
-![Wazuh Dashboard](screenshots/08-wazuh-dashboard-fresh.png)
+![Wazuh Dashboard](screenshots/wazuhDefaultDashBoard.png)
 
 ### 5. Deploy Wazuh Agent — Raspberry Pi
 
@@ -121,9 +121,9 @@ sudo systemctl enable wazuh-agent
 sudo systemctl start wazuh-agent
 ```
 
-![Pi Agent Active](screenshots/07-pi-agent-active.png)
+![Pi Agent Active](screenshots/wazuh-running-active.png)
 
-![Pi Agent on Dashboard](screenshots/09-pi-agent-dashboard.png)
+![Pi Agent on Dashboard](screenshots/raspPi-agent-dash.png)
 
 ### 6. Deploy Wazuh Agent — Windows 11
 
@@ -141,7 +141,7 @@ msiexec.exe /i "$HOME\Downloads\wazuh-agent.msi" WAZUH_MANAGER="<WAZUH-SERVER-IP
 net start WazuhSvc
 ```
 
-![Both Agents Active](screenshots/10-both-agents-active.png)
+![Both Agents Active](screenshots/PCadded-to-dashboard.png)
 
 ## Results
 
@@ -149,7 +149,7 @@ net start WazuhSvc
 
 Wazuh immediately identified **73 critical vulnerabilities** on the Windows workstation by cross-referencing installed software against the CVE database. The majority (69/73) were attributed to an outdated Mozilla Firefox installation.
 
-![PC Vulnerability Scan](screenshots/11-pc-vulnerability-scan.png)
+![PC Vulnerability Scan](screenshots/inDepth-PC-analysis.png)
 
 **Remediation steps taken:**
 - Uninstalled outdated Firefox (69 critical CVEs eliminated)
@@ -160,7 +160,7 @@ Wazuh immediately identified **73 critical vulnerabilities** on the Windows work
 
 The Pi agent revealed MITRE ATT&CK activity across multiple tactic categories (Defense Evasion, Initial Access, Persistence, Privilege Escalation, Lateral Movement) and ran CIS Distribution Independent Linux Benchmark compliance scans.
 
-![Pi Agent Detail](screenshots/12-pi-agent-detail.png)
+![Pi Agent Detail](screenshots/indepth-RaspPi-analysis.png)
 
 ### CIS Compliance Scanning
 
