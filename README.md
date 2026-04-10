@@ -234,7 +234,7 @@ Then configured the data source in the Grafana UI, pointing to `https://localhos
 
 Created a custom dashboard called "Wazuh SIEM Overview" with panels for tracking alert volume and trends across all monitored agents.
 
-![Default Dashboard](screenshots/grafana/default-dashboard.png)
+![Default Dashboard](screenshots/grafana/wazuh-SIEM-overview.png)
 
 **Panel 1: Security Events Over Time** — A time series visualization showing alert volume across all agents. Uses a Lucene query of `*` (match everything), counted and grouped by a Date Histogram on the `timestamp` field. The spike around late March lines up exactly with when I deployed the agents and they started reporting in.
 
